@@ -1,7 +1,7 @@
 [
     {
         "task": "Fare la spesa",
-        "status": true
+        "status": false
 
     },
     {
@@ -11,7 +11,7 @@
     },
     {
         "task": "Guardare Masterchef",
-        "status": true
+        "status": false
 
     }
 ]

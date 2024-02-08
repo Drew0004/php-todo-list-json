@@ -7,6 +7,15 @@ createApp({
             tasks : []
         };
     },
+    methods:{
+        manageDoneTask(index){
+            if (this.tasks[index].status === true){
+                this.tasks[index].status = false
+            }else{
+                this.tasks[index].status = true
+            }
+        }
+    },
     mounted() {
         axios
             .get('http://localhost:8888/esercizi%20Boolean%20Backend/Esercizio%2044/php-todo-list-json/backend/tasks.php')
