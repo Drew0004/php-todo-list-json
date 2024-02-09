@@ -30,12 +30,14 @@ createApp({
             }
             )
             .then((res) => {
-                console.log(res.data)
-                this.tasks.push({
-                    task: this.newTask,
-                    status: false,
-                })
-                this.newTask = '';
+                if(res.data.code == 200){
+                    console.log(res.data)
+                    this.tasks.push({
+                        task: this.newTask,
+                        status: false,
+                    })
+                    this.newTask = '';
+                }
             });
         },
         removeTask(index){
@@ -49,17 +51,21 @@ createApp({
                 }
             }
             ).then((res)=>{
-                console.log(res);
+                if(res.data.code == 200){
+                    console.log(res);
+                    this.tasks.splice(index, 1);
+                }
             })
-            this.tasks.splice(index, 1);
         },
     },
     mounted() {
         axios
             .get('http://localhost:8888/esercizi%20Boolean%20Backend/Esercizio%2044/php-todo-list-json/backend/tasks.php')
             .then((res) => {
+
                 console.log('Array:',res.data)
                 this.tasks = res.data
+
             });
     }
 }).mount('#app');

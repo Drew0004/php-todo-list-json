@@ -20,4 +20,9 @@
 
     //aggiorno il database originale
     file_put_contents('db.json', $updatedJson);
+    
+    echo json_encode([
+        'message' => 'ok',
+        'code' => 200,
+    ]);
 ?>
