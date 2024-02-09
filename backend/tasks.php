@@ -3,7 +3,7 @@
     $tasks = json_decode($string, true);
     // var_dump($tasks);
 
-    header('Content-Type: db.json');
+    header('Content-Type: application/json');
     echo json_encode($tasks);
     // var_dump($tasks);
 ?>
