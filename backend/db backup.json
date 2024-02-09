@@ -1,0 +1,17 @@
+[
+    {
+        "task": "Fare la spesa",
+        "status": false
+
+    },
+    {
+        "task": "Portare a spasso il cane",
+        "status": false
+
+    },
+    {
+        "task": "Guardare Masterchef",
+        "status": false
+
+    }
+]

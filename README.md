@@ -9,3 +9,7 @@ Prima assicuratevi che la vostra pagina index.php/index.html (il vostro front-en
 Solo a questo punto sarà utile passare alla lettura della lista da un file JSON.
 Bonus
 Mostrare lo stato del task → se completato, barrare il testo
+
+http://localhost:8888/Esercizi%20Boolean%20Backend/Esercizio%2044/php-todo-list-json/frontend/
+
+http://localhost:8888/Esercizi%20Boolean%20Backend/Esercizio%2044/php-todo-list-json/backend/newtask.php

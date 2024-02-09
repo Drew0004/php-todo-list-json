@@ -13,13 +13,27 @@
         <div id="app">
             <div class="container">
                 <h1 class="my-5 text-center text-white">{{message}}</h1>
+                <div class="row">
+                    <div class="col-6">
+                        <input v-model="newTask" type="text" class="form-control" id="add-task" placeholder="Aggiungi un nuovo task..">
+                    </div>
+                    <div class="col-2">
+                        <button @click="addNewTask()" class="ms-5 btn btn-primary">
+                            Aggiungi
+                        </button>
+                    </div>
+                    
+                </div>
                 <ol>
                     <li :class="singleTask.status == true ? 'done' : '' " 
                     v-for="(singleTask, i) in tasks"
                     class="text-white fs-5 my-4">
                         {{singleTask.task}} / fatto: {{singleTask.status}}
-                        <button @click="manageDoneTask(i)" class="ms-5 btn btn-primary">
-                            Fatto
+                        <button @click="manageDoneTask(i)" class="ms-3 btn btn-success">
+                            Completa
+                        </button>
+                        <button @click="removeTask(i)" class="ms-4 btn btn-danger">
+                            Rimuovi
                         </button>
                     </li>
                 </ol>
