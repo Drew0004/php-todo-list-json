@@ -10,11 +10,27 @@ createApp({
     },
     methods:{
         manageDoneTask(index){
-            if (this.tasks[index].status === true){
-                this.tasks[index].status = false
-            }else{
-                this.tasks[index].status = true
-            }
+            this.tasks[index].status = !this.tasks[index].status
+            console.log(this.tasks[index].status)
+
+            axios
+            .post('http://localhost:8888/Esercizi%20Boolean%20Backend/Esercizio%2044/php-todo-list-json/backend/changestatus.php',
+            {
+                stat: this.tasks[index].status,
+                index : index
+            },
+            {
+                headers:{
+                    'Content-Type' : 'multipart/form-data'
+                }
+            })
+            .then((res)=>{
+                console.log(res);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
         },
         addNewTask(){
             axios
@@ -30,14 +46,14 @@ createApp({
             }
             )
             .then((res) => {
-                if(res.data.code == 200){
+                // if(res.data.code == 200){ 
                     console.log(res.data)
                     this.tasks.push({
                         task: this.newTask,
                         status: false,
                     })
                     this.newTask = '';
-                }
+                // }
             });
         },
         removeTask(index){
